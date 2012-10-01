@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+define([
+	'require',
+	'signals',
+	'json!./config.json',
+	'superclasses/mediator',
+	${1:null}
+], function (require, Signal, config, Mediator, ${2:null}) {
+	var mediator = Mediator.extend({
+
+		config: config,
+		modules: {},
+		moduleConstructors: [],
+
+		init: function (settings) {
+			this.addModules($2);
+
+			this._super(settings);
+		},
+
+		resume: function () {
+			this._super();
+
+			// Resume code
+		},
+
+		signals: {
+			Loaded: new Signal()
+		}
+	});
+
+	return mediator;
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>component</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+</snippet>

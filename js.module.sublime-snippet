@@ -1,0 +1,48 @@
+<snippet>
+	<content><![CDATA[
+define([
+	'jquery',
+	'signals',
+	'superclasses/facade'
+], function (\$, Signal, Facade) {
+	return function ${1:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {
+		var cache = {
+				// object cache
+			},
+			params = {
+				// private parameters
+			},
+			methods = {
+				// private methods
+			};
+
+		return Facade.extend({
+			init: function () {
+				params = this.merge(params, settings);
+				// init method code here
+
+				this._super();
+			},
+
+			attach: function () {
+				// attach method code here
+
+				this._super();
+			},
+
+			detach: function () {
+				// detach method code here
+
+				this._super();
+			},
+
+			signals: {}
+		});
+	};
+});
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>module</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
