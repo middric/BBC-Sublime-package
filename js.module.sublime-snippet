@@ -1,11 +1,11 @@
 <snippet>
 	<content><![CDATA[
 define([
-	'jquery',
-	'signals',
+	'jquery-1',
+	'jssignals-1',
 	'superclasses/facade'
-], function (\$, Signal, Facade) {
-	return function ${1:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {
+], function (\$, Signals, Facade) {
+	var Signal = Signals.Signal,
 		var cache = {
 				// object cache
 			},

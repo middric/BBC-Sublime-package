@@ -2,19 +2,21 @@
 	<content><![CDATA[
 define([
 	'require',
-	'signals',
-	'json!./config.json',
+	'jquery-1',
+	'jssignals-1',
+	'json!components/$1/config.json',
 	'superclasses/mediator',
-	${1:null}
-], function (require, Signal, config, Mediator, ${2:null}) {
-	var mediator = Mediator.extend({
-
+	${2:null}
+], function (require, $, Signals, config, Mediator, ${3:null}) {
+	var Signal = Signals.Signal,
+		mediator = Mediator.extend({
+		
 		config: config,
 		modules: {},
 		moduleConstructors: [],
 
 		init: function (settings) {
-			this.addModules($2);
+			this.addModules($3);
 
 			this._super(settings);
 		},
