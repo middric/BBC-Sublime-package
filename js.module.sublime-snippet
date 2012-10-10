@@ -13,6 +13,7 @@ define([
 	 * @requires jquery-1
 	 * @requires jssignals-1
 	 * @requires superclasses/facade
+     * @augments superclasses/facade
 	 * @module ${3}/modules/${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/$1/}}
 	 */
 	module = function ${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {

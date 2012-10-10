@@ -17,6 +17,7 @@ define([
 		 * @requires jssignals-1
 		 * @requires json!components/$1/config.json
 		 * @requires superclasses/mediator
+         * @augments superclasses/mediator
 		 * @module $1
 		 */
 		mediator = Mediator.extend({
