@@ -6,6 +6,16 @@ define([
 	'superclasses/facade'
 ], function (\$, Signals, Facade) {
 	var Signal = Signals.Signal,
+	/**
+	 * @constructor
+	 * @author ${1}
+	 * @description ${2}
+	 * @requires jquery-1
+	 * @requires jssignals-1
+	 * @requires superclasses/facade
+	 * @module ${3}/modules/${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/$1/}}
+	 */
+	module = function ${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {
 		var cache = {
 				// object cache
 			},
@@ -17,6 +27,10 @@ define([
 			};
 
 		return Facade.extend({
+			/**
+			 * [init description]
+			 * @return {[type]} [description]
+			 */
 			init: function () {
 				params = this.merge(params, settings);
 				// init method code here
@@ -24,20 +38,33 @@ define([
 				this._super();
 			},
 
+			/**
+			 * [attach description]
+			 * @return {[type]} [description]
+			 */
 			attach: function () {
 				// attach method code here
 
 				this._super();
 			},
 
+			/**
+			 * [detach description]
+			 * @return {[type]} [description]
+			 */
 			detach: function () {
 				// detach method code here
 
 				this._super();
 			},
 
+			/**
+             * Facade signals
+             * @type {Object}
+             */
 			signals: {}
 		});
+		return module;
 	};
 });
 ]]></content>
