@@ -1,56 +1,35 @@
 <snippet>
 	<content><![CDATA[
 define([
-	'require',
-	'jquery-1',
-	'jssignals-1',
-	'json!components/$1/config.json',
-	'superclasses/mediator',
-	${2:null}
-], function (require, \$, Signals, config, Mediator, ${3:null}) {
-	var Signal = Signals.Signal,
-		/**
-		 * @description $4
-		 * @author $5
-		 * @requires require
-		 * @requires jquery-1
-		 * @requires jssignals-1
-		 * @requires json!components/$1/config.json
-		 * @requires superclasses/mediator
-         * @augments superclasses/mediator
-		 * @module $1
-		 */
-		mediator = Mediator.extend({
-		
-		config: config,
-		modules: {},
-		moduleConstructors: [],
+    'require',
+    'jquery-1',
+    'jssignals-1',
+    'superclasses/mediator',
+    'components/$1/config',
+    ${2:null}
+], function (require, \$, Signals, Mediator, config, ${3:null}) {
+    var Signal = Signals.Signal,
+        mediator = Mediator.extend({
 
-		/**
-		 * [init description]
-		 * @param  {[type]} settings [description]
-		 * @return {[type]}          [description]
-		 */
-		init: function (settings) {
-			this.addModules($3);
+        config: config,
+        modules: {},
+        moduleConstructors: [],
 
-			this._super(settings);
-		},
+        init: function (settings) {
+            this.addModules($3);
+            this._super(settings);
+        },
 
-		/**
-		 * [resume description]
-		 * @return {[type]} [description]
-		 */
-		resume: function () {
+        run: function () {
 			this._super();
-		},
+        },
 
 		signals: {
 			Loaded: new Signal()
 		}
-	});
+    });
 
-	return mediator;
+    return mediator;
 });
 ]]></content>
 	<tabTrigger>component</tabTrigger>

@@ -1,0 +1,39 @@
+<snippet>
+    <content><![CDATA[
+define([
+    'jquery-1',
+    'components/$1/tests/html',
+    'components/$1/mediator',
+    'components/$1/config',
+    'utils/jasmineHelpers'
+], function (\$, html, $2, config, jasmineHelpers) {
+    config.testMode = true;
+
+    describe("", function () {
+        var markup = \$(html).appendTo('body').css({'position': 'absolute', 'left': -10000}),
+            component = new $2(config);
+
+        it("has instantiated attached modules", function () {
+            var size = 0, key;
+            for (key in component.modules) {
+                if (component.modules.hasOwnProperty(key)) {
+                    size++;
+                }
+            }
+            expect(component.moduleConstructors.length).toEqual(size);
+        });
+
+        describe("MyModule", function () {
+            var module = component.modules.MyModule;
+
+            jasmineHelpers.loadedTest("MyModule", component);
+        });
+
+        jasmineHelpers.afterAll(function () {
+            markup.remove();
+        });
+    });
+});
+]]></content>
+    <tabTrigger>spec</tabTrigger>
+</snippet>

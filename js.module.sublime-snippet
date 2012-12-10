@@ -1,23 +1,13 @@
 <snippet>
 	<content><![CDATA[
 define([
-	'jquery-1',
-	'jssignals-1',
-	'superclasses/facade'
+    'jquery-1',
+    'jssignals-1',
+    'superclasses/facade'
 ], function (\$, Signals, Facade) {
-	var Signal = Signals.Signal,
-	/**
-	 * @constructor
-	 * @author ${1}
-	 * @description ${2}
-	 * @requires jquery-1
-	 * @requires jssignals-1
-	 * @requires superclasses/facade
-     * @augments superclasses/facade
-	 * @module ${3}/modules/${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/$1/}}
-	 */
-	module = function ${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {
-		var cache = {
+    var Signal = Signals.Signal;
+    return function ${4:${TM_FILENAME/(^.)(.*)(Module?)\..+$/\U$1\E$2/}}(settings, mediatorConfig) {
+        var cache = {
 				// object cache
 			},
 			params = {
@@ -27,7 +17,7 @@ define([
 				// private methods
 			};
 
-		return Facade.extend({
+        return Facade.extend({
 			/**
 			 * [init description]
 			 * @return {[type]} [description]
@@ -65,8 +55,7 @@ define([
              */
 			signals: {}
 		});
-		return module;
-	};
+    };
 });
 ]]></content>
 	<tabTrigger>module</tabTrigger>
